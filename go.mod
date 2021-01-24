@@ -1,4 +1,4 @@
-module github.com/saniales/golang-crypto-trading-bot
+module github.com/izhukovich/golang-crypto-trading-bot
 
 go 1.15
 
