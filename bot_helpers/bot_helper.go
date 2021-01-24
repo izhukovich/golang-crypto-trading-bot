@@ -14,6 +14,8 @@ func InitExchange(exchangeConfig environment.ExchangeConfig, simulatedMode bool,
 
 	var exch exchanges.ExchangeWrapper
 	switch exchangeConfig.ExchangeName {
+	case "kraken":
+		exch = exchanges.NewKrakenWrapper(exchangeConfig.PublicKey, exchangeConfig.SecretKey, depositAddresses)
 	case "bittrex":
 		exch = exchanges.NewBittrexWrapper(exchangeConfig.PublicKey, exchangeConfig.SecretKey, depositAddresses)
 	case "bittrexV2":

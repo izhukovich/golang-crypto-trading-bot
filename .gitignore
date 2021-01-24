@@ -31,3 +31,4 @@ golang-crypto-trading-bot
 .vscode
 .idea
 vendor
+.DS_Store
