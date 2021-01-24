@@ -117,6 +117,11 @@ func (wrapper *KucoinWrapper) GetOrderBook(market *environment.Market) (*environ
 	return ret, nil
 }
 
+// OpenOrders gets the list of users open orders
+func (wrapper *KucoinWrapper) OpenOrders(market *environment.Market) (*environment.OpenOrders, error) {
+	return nil, errors.New("OpenOrders not implemented")
+}
+
 // BuyLimit performs a limit buy action.
 func (wrapper *KucoinWrapper) BuyLimit(market *environment.Market, amount, limit float64) (string, error) {
 	orderOid, err := wrapper.api.CreateOrder(MarketNameFor(market, wrapper), "BUY", limit, amount)

@@ -74,6 +74,11 @@ func (wrapper *BittrexWrapperV2) GetOrderBook(market *environment.Market) (*envi
 	panic("GetOrderBook not implemented")
 }
 
+// OpenOrders gets the list of users open orders
+func (wrapper *BittrexWrapperV2) OpenOrders(market *environment.Market) (*environment.OpenOrders, error) {
+	return nil, errors.New("OpenOrders not implemented")
+}
+
 // BuyLimit performs a limit buy action.
 func (wrapper *BittrexWrapperV2) BuyLimit(market *environment.Market, amount float64, limit float64) (string, error) {
 	return "", errors.New("BuyLimit not implemented")

@@ -22,20 +22,34 @@ import (
 	"github.com/shopspring/decimal"
 )
 
-//OrderType is an enum {ASK, BID}
+// OrderType is an enum {ASK, BID}
 type OrderType int16
 
 const (
-	//Ask Represents an ASK Order.
+	// Ask Represents an ASK Order.
 	Ask OrderType = iota
-	//Bid Represents a BID Order.
+	// Bid Represents a BID Order.
 	Bid OrderType = iota
 )
 
-//OrderBook represents a standard orderbook implementation.
+// OrderBook represents a standard orderbook implementation.
 type OrderBook struct {
 	Asks []Order `json:"asks,required"`
 	Bids []Order `json:"bids,required"`
+}
+
+// OpenOrdder represents an open order
+type OpenOrder struct {
+	Pair           string          `json:"pair"`
+	Status         string          `json:"status,required"`
+	Fee            decimal.Decimal `json:"fee,required"`
+	PrimaryPrice   decimal.Decimal `json:"primaryPrice"`
+	SecondaryPrice decimal.Decimal `json:"secondaryPrice"`
+}
+
+// OpenOrders represents a list of open orders
+type OpenOrders struct {
+	Orders map[string]OpenOrder `json:"openOrder"`
 }
 
 // String returns the string representation of the object.
@@ -46,7 +60,7 @@ func (book OrderBook) String() string {
 		fmt.Sprintln(book.Bids)
 }
 
-//Order represents a single order in the Order Book for a market.
+// Order represents a single order in the Order Book for a market.
 type Order struct {
 	Value       decimal.Decimal //Value of the trade : e.g. in a BTC ETH is the value of a single ETH in BTC.
 	Quantity    decimal.Decimal //Quantity of Coins of this order.
@@ -54,7 +68,7 @@ type Order struct {
 	Timestamp   time.Time       //[optional] The timestamp of the order (as got from the exchange).
 }
 
-//Total returns order total in base currency.
+// Total returns order total in base currency.
 func (order Order) Total() decimal.Decimal {
 	return order.Quantity.Mul(order.Value)
 }

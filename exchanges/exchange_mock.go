@@ -4,8 +4,8 @@ import (
 	"fmt"
 
 	"github.com/gofrs/uuid"
-	"github.com/juju/errors"
 	"github.com/izhukovich/golang-crypto-trading-bot/environment"
+	"github.com/juju/errors"
 	"github.com/shopspring/decimal"
 )
 
@@ -46,6 +46,11 @@ func (wrapper *ExchangeWrapperSimulator) GetMarketSummary(market *environment.Ma
 // GetOrderBook gets the order(ASK + BID) book of a market.
 func (wrapper *ExchangeWrapperSimulator) GetOrderBook(market *environment.Market) (*environment.OrderBook, error) {
 	return wrapper.innerWrapper.GetOrderBook(market)
+}
+
+// OpenOrders gets the list of users open orders
+func (wrapper *ExchangeWrapperSimulator) OpenOrders(market *environment.Market) (*environment.OpenOrders, error) {
+	return nil, errors.New("OpenOrders not implemented")
 }
 
 // BuyLimit here is just to implement the ExchangeWrapper Interface, do not use, use BuyMarket instead.
