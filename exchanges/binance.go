@@ -20,8 +20,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/adshao/go-binance/v2"
-	"github.com/saniales/golang-crypto-trading-bot/environment"
+	binance "github.com/adshao/go-binance/v2"
+	"github.com/izhukovich/golang-crypto-trading-bot/environment"
 	"github.com/shopspring/decimal"
 	"github.com/sirupsen/logrus"
 )

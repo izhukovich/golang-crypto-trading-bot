@@ -1,11 +1,11 @@
 <p align="center"><img src="https://res.cloudinary.com/saniales-github/image/upload/v1541856660/saniales/golang-crypto-trading-bot/logo.png" width="360"></p>
 <p align="center">
   <a href="https://github.com/avelino/awesome-go#other-software"><img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Listed on Awesome Go"></img></a>
-  <a href="https://github.com/saniales/golang-crypto-trading-bot/actions"><img src="https://github.com/saniales/golang-crypto-trading-bot/workflows/Go%20Build/badge.svg?branch=develop" alt="Develop Branch Build Status"></img></a>
-  <a href="https://godoc.org/github.com/saniales/golang-crypto-trading-bot"><img src="https://godoc.org/github.com/saniales/golang-crypto-trading-bot?status.svg" alt="Godoc reference"></a>
-  <a href="https://github.com/saniales/golang-crypto-trading-bot/releases"><img src="https://img.shields.io/github/release/saniales/golang-crypto-trading-bot.svg" alt="Last Release"></a>
-  <a href="https://github.com/saniales/golang-crypto-trading-bot/LICENSE"><img src="https://img.shields.io/github/license/saniales/golang-crypto-trading-bot.svg?maxAge=2592000" alt="License"></a>
-  <a href="https://goreportcard.com/report/github.com/saniales/golang-crypto-trading-bot"><img src="https://goreportcard.com/badge/github.com/saniales/golang-crypto-trading-bot" alt="Goreportcard" /></a>
+  <a href="https://github.com/izhukovich/golang-crypto-trading-bot/actions"><img src="https://github.com/izhukovich/golang-crypto-trading-bot/workflows/Go%20Build/badge.svg?branch=develop" alt="Develop Branch Build Status"></img></a>
+  <a href="https://godoc.org/github.com/izhukovich/golang-crypto-trading-bot"><img src="https://godoc.org/github.com/izhukovich/golang-crypto-trading-bot?status.svg" alt="Godoc reference"></a>
+  <a href="https://github.com/izhukovich/golang-crypto-trading-bot/releases"><img src="https://img.shields.io/github/release/saniales/golang-crypto-trading-bot.svg" alt="Last Release"></a>
+  <a href="https://github.com/izhukovich/golang-crypto-trading-bot/LICENSE"><img src="https://img.shields.io/github/license/saniales/golang-crypto-trading-bot.svg?maxAge=2592000" alt="License"></a>
+  <a href="https://goreportcard.com/report/github.com/izhukovich/golang-crypto-trading-bot"><img src="https://goreportcard.com/badge/github.com/izhukovich/golang-crypto-trading-bot" alt="Goreportcard" /></a>
 </p>
 
 # Golang Crypto Trading Bot
@@ -17,13 +17,13 @@ A golang implementation of a console-based trading bot for cryptocurrency exchan
 Download a release or directly build the code from this repository.
 
 ``` bash
-go get github.com/saniales/golang-crypto-trading-bot
+go get github.com/izhukovich/golang-crypto-trading-bot
 ```
 
 If you need to, you can create a strategy and bind it to the bot:
 
 ``` go
-import bot "github.com/saniales/golang-crypto-trading-bot/cmd"
+import bot "github.com/izhukovich/golang-crypto-trading-bot/cmd"
 
 func main() {
     bot.AddCustomStrategy(examples.MyStrategy)
@@ -31,7 +31,7 @@ func main() {
 }
 ```
 
-For strategy reference see the [Godoc documentation](https://godoc.org/github.com/saniales/golang-crypto-trading-bot).
+For strategy reference see the [Godoc documentation](https://godoc.org/github.com/izhukovich/golang-crypto-trading-bot).
 
 ## Simulation Mode
 

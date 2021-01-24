@@ -16,9 +16,9 @@
 package examples
 
 import (
-	"github.com/saniales/golang-crypto-trading-bot/environment"
-	"github.com/saniales/golang-crypto-trading-bot/exchanges"
-	"github.com/saniales/golang-crypto-trading-bot/strategies"
+	"github.com/izhukovich/golang-crypto-trading-bot/environment"
+	"github.com/izhukovich/golang-crypto-trading-bot/exchanges"
+	"github.com/izhukovich/golang-crypto-trading-bot/strategies"
 	"github.com/sirupsen/logrus"
 )
 

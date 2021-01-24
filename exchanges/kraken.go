@@ -22,7 +22,7 @@ import (
 
 	"github.com/beldur/kraken-go-api-client"
 	"github.com/fatih/structs"
-	"github.com/saniales/golang-crypto-trading-bot/environment"
+	"github.com/izhukovich/golang-crypto-trading-bot/environment"
 	"github.com/shopspring/decimal"
 )
 
