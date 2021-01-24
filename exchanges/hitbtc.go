@@ -22,9 +22,9 @@ import (
 
 	"github.com/gofrs/uuid"
 
+	"github.com/izhukovich/golang-crypto-trading-bot/environment"
 	"github.com/juju/errors"
 	"github.com/saniales/go-hitbtc"
-	"github.com/izhukovich/golang-crypto-trading-bot/environment"
 	"github.com/shopspring/decimal"
 )
 
@@ -117,6 +117,11 @@ func (wrapper *HitBtcWrapperV2) GetOrderBook(market *environment.Market) (*envir
 	}
 
 	return ret, nil
+}
+
+// OpenOrders gets the list of users open orders
+func (wrapper *HitBtcWrapperV2) OpenOrders(market *environment.Market) (*environment.OpenOrders, error) {
+	return nil, errors.New("OpenOrders not implemented")
 }
 
 // BuyLimit performs a limit buy action.

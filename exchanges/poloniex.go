@@ -22,8 +22,8 @@ import (
 
 	"github.com/shopspring/decimal"
 
-	"github.com/pharrisee/poloniex-api"
 	"github.com/izhukovich/golang-crypto-trading-bot/environment"
+	"github.com/pharrisee/poloniex-api"
 )
 
 // PoloniexWrapper provides a Generic wrapper of the Poloniex API.
@@ -130,6 +130,11 @@ func (wrapper *PoloniexWrapper) GetOrderBook(market *environment.Market) (*envir
 	}
 
 	return &orderBook, nil
+}
+
+// OpenOrders gets the list of users open orders
+func (wrapper *PoloniexWrapper) OpenOrders(market *environment.Market) (*environment.OpenOrders, error) {
+	return nil, errors.New("OpenOrders not implemented")
 }
 
 // BuyLimit performs a limit buy action.

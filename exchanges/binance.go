@@ -20,7 +20,7 @@ import (
 	"errors"
 	"fmt"
 
-	binance "github.com/adshao/go-binance/v2"
+	"github.com/adshao/go-binance/v2"
 	"github.com/izhukovich/golang-crypto-trading-bot/environment"
 	"github.com/shopspring/decimal"
 	"github.com/sirupsen/logrus"
@@ -102,6 +102,11 @@ func (wrapper *BinanceWrapper) GetOrderBook(market *environment.Market) (*enviro
 	}
 
 	return orderbook, nil
+}
+
+// OpenOrders gets the list of users open orders
+func (wrapper *BinanceWrapper) OpenOrders(market *environment.Market) (*environment.OpenOrders, error) {
+	return nil, errors.New("OpenOrders not implemented")
 }
 
 func (wrapper *BinanceWrapper) orderbookFromREST(market *environment.Market) (*environment.OrderBook, int64, error) {

@@ -99,6 +99,11 @@ func (wrapper *BittrexWrapper) GetOrderBook(market *environment.Market) (*enviro
 	return &orderBook, nil
 }
 
+// OpenOrders gets the list of users open orders
+func (wrapper *BittrexWrapper) OpenOrders(market *environment.Market) (*environment.OpenOrders, error) {
+	return nil, errors.New("OpenOrders not implemented")
+}
+
 // BuyLimit performs a limit buy action.
 func (wrapper *BittrexWrapper) BuyLimit(market *environment.Market, amount float64, limit float64) (string, error) {
 	orderNumber, err := wrapper.api.CreateOrder(bittrex.CreateOrderParams{

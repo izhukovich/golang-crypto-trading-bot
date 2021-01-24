@@ -116,6 +116,11 @@ func (wrapper *BitfinexWrapper) GetOrderBook(market *environment.Market) (*envir
 	return orderbook, nil
 }
 
+// OpenOrders gets the list of users open orders
+func (wrapper *BitfinexWrapper) OpenOrders(market *environment.Market) (*environment.OpenOrders, error) {
+	return nil, errors.New("OpenOrders not implemented")
+}
+
 // BuyLimit performs a limit buy action.
 //
 // NOTE: In bitfinex buy and sell orders behave the same (the go bitfinex api automatically puts it on correct side)

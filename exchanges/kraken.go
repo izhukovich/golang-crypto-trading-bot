@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/beldur/kraken-go-api-client"
+	krakenapi "github.com/beldur/kraken-go-api-client"
 	"github.com/fatih/structs"
 	"github.com/izhukovich/golang-crypto-trading-bot/environment"
 	"github.com/shopspring/decimal"
@@ -109,6 +109,41 @@ func (wrapper *KrakenWrapper) GetOrderBook(market *environment.Market) (*environ
 	}
 
 	return &orderBook, nil
+}
+
+// OpenOrders gets the list of users open orders
+func (wrapper *KrakenWrapper) OpenOrders(market *environment.Market) (*environment.OpenOrders, error) {
+	krakenOpenOrders, err := wrapper.api.OpenOrders(map[string]string{})
+	if err != nil {
+		return nil, err
+	}
+
+	var openOrders environment.OpenOrders
+	for k, v := range krakenOpenOrders.Open {
+		if openOrders.Orders == nil {
+			openOrders.Orders = map[string]environment.OpenOrder{}
+		}
+
+		primPrice, err := decimal.NewFromString(v.Description.PrimaryPrice)
+		if err != nil {
+			return nil, err
+		}
+
+		secPrice, err := decimal.NewFromString(v.Description.SecondaryPrice)
+		if err != nil {
+			return nil, err
+		}
+
+		openOrders.Orders[k] = environment.OpenOrder{
+			Pair:           v.Description.AssetPair,
+			Status:         v.Status,
+			Fee:            decimal.NewFromFloat(v.Fee),
+			PrimaryPrice:   primPrice,
+			SecondaryPrice: secPrice,
+		}
+	}
+
+	return &openOrders, nil
 }
 
 // BuyLimit performs a limit buy action.
